@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For loloo </title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffd6e8, #ffeef6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Comic Sans MS", cursive;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 25px;
+      text-align: center;
+      width: 340px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .emoji {
+      font-size: 60px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #ff4d88;
+    }
+
+    button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    #yes {
+      background: #ff4d88;
+      color: white;
+    }
+
+    #no {
+      background: #ddd;
+      position: absolute;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="emoji">😍😍</div>
+  <h2>Halooma,<br>will you be my valentine?</h2>
+  <button id="yes" onclick="yesClick()">Yes 💕</button>
+  <button id="no">No 🙈</button>
+  <p class="note">No seems a bit shy 👀</p>
+</div>
+
+<script>
+  const noBtn = document.getElementById("no");
+
+  noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 100);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  });
+
+  function yesClick() {
+    document.body.innerHTML = `
+      <div style="
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+        background:linear-gradient(135deg,#ffd6e8,#ffeef6);
+        font-family:'Comic Sans MS', cursive;
+        color:#ff4d88;
+        text-align:center;">
+        <h1>غصب عنك</h1>
+        <h2>بحبك فشخ 😘</h2>
+        <p>Happy Valentine 😘</p>
+      </div>
+    `;
+  }
+</script>
+
+</body>
+</html>
